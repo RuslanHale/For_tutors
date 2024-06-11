@@ -89,8 +89,17 @@ CREATE TABLE ratings (
 )
 """
 
+alter_table_query = """
+ALTER TABLE movies
+MODIFY COLUMN collection_in_mil DECIMAL(4,1)
+"""
+
 # send_request(create_movies_table_query, 'online_movie_rating')
 # send_request(create_reviewers_table_query, 'online_movie_rating')
 # send_request(create_ratings_table_query, 'online_movie_rating')
 
-send_request("DESCRIBE movies", 'online_movie_rating', True)
+# send_request("DESCRIBE movies", 'online_movie_rating', True)
+
+# send_request(alter_table_query, 'online_movie_rating') # Внесли изменения. collection_in_mil INT -> DECIMAL(4,1)
+# send_request("DESCRIBE movies", 'online_movie_rating', True)
+
